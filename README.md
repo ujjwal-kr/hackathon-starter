@@ -1,4 +1,4 @@
-# hackathon-starter
+# Hackathon Starter
 
 A full stack JavsScript template to quickly get started on a hackathon or some equivalent business you are up to.
 
@@ -18,8 +18,7 @@ A full stack JavsScript template to quickly get started on a hackathon or some e
     - .env to manage environment vars
     - helmet for security headers
 
-- DB
- - todo 
+- DB: todo
 
 ## How to use
 
@@ -31,3 +30,6 @@ A full stack JavsScript template to quickly get started on a hackathon or some e
 - run `git push -u origin main` to push the code as main branch
 - `cd` into both the directories and run `npm i` to install dependencies
 - `npm run dev` into both the directories to run the dev server, check package.json for more commands
+
+## Developers
+ - [@ujjwal-kr](https://github.com/ujjwal-kr)
