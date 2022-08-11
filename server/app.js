@@ -1,6 +1,9 @@
 import express from "express";
 const app = express();
 
+import errorHandler from "./middlewares/errorHandler.js";
+import notFound from './middlewares/notFound.js';
+
 // essentials
 
 import morgan from "morgan";
@@ -20,4 +23,7 @@ app.get("/", (req, res) => {
   res.send("Hello from express");
 });
 
+app.use(notFound)
+
+app.use(errorHandler)
 export default app;
