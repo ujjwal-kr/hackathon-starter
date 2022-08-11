@@ -1,10 +1,9 @@
-import express from 'express';
-const app = express();
+import app from "./app.js";
 
-app.get("/", (req, res) => {
-  res.send("Hello from Express");
-});
+// TODO: setup db
 
-app.listen(process.env.PORT || 4000, () => {
-  console.log("Server is Running");
+let port = process.env.PORT || 4000;
+
+app.listen(port, () => {
+  console.log(`Server listening on port ${port} 🚀`);
 });
