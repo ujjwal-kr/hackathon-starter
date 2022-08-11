@@ -1,6 +1,6 @@
 # Hackathon Starter
 
-A full stack JavsScript template to quickly get started on a hackathon or some equivalent business you are up to.
+A full stack JavaScript template with authentication to quickly get started on a hackathon or some equivalent business you are up to.
 
 > **Warning**:
 In heavy development, use at your own risk.
@@ -15,11 +15,14 @@ In heavy development, use at your own risk.
 
 - Backend
     - Node and Express app
+    - jwt for authorization
+    - bcrypt for encrypting passwords
     - morgan for logging
     - prettier for formatting
     - nodemon for dev server
     - .env to manage environment vars
     - helmet for security headers
+    - A CLI to generate routes and controllers
 
 - DB: todo
 
