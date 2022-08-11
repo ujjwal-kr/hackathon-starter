@@ -6,7 +6,7 @@ import errorHandler from "./middlewares/errorHandler.js";
 import notFound from "./middlewares/notFound.js";
 
 // import routes
-import users from './routes/user.router.js'
+import users from "./routes/user.router.js";
 
 // essentials
 
@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
   res.send("Hello from express");
 });
 
-app.use('/users', users)
+app.use("/users", users);
 
 app.use(notFound);
 

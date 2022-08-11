@@ -1,0 +1,26 @@
+POST http://localhost:4000/users HTTP/1.1
+content-type: application/json
+
+{
+    "name": "sample",
+    "age": 12,
+    "email": "test@test.com"
+}
+
+###
+POST http://localhost:4000/users HTTP/1.1
+content-type: application/json
+
+{
+    "name": "ujjwal",
+    "age": 122,
+    "email": "test@tests.com"
+}
+
+###
+GET http://localhost:4000/users HTTP/1.1
+content-type: application/json
+
+###
+GET http://localhost:4000/users/test@test.com HTTP/1.1
+content-type: application/json
