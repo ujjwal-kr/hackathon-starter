@@ -10,6 +10,7 @@ In heavy development, use at your own risk.
 - Client
     - A react app created with Vite
     - emotion and mantine for styles
+    - Sign up and login feature built-in
     - axios for requests
     - A CLI to generate components and services
 
@@ -22,6 +23,7 @@ In heavy development, use at your own risk.
     - nodemon for dev server
     - .env to manage environment vars
     - helmet for security headers
+    - Joi for validation
     - A CLI to generate routes and controllers
 
 - DB: todo
