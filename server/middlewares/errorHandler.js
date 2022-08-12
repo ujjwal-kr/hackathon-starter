@@ -1,6 +1,9 @@
 function handleErrors(error, req, res, next) {
-  // Can log the stack here if needed using error.stack
-  res.status(res.statusCode).json({ message: error.message });
+  if (process.env.ENV == "dev") {
+    res.status(res.statusCode).json({message: error.message, stack: error.stack})
+  } else {
+    res.status(res.statusCode).json({ message: error.message });
+  }
 }
 
 export default handleErrors;

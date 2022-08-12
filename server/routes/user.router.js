@@ -2,6 +2,7 @@ import express from "express";
 const router = express.Router();
 
 import UserController from "../controllers/user.controller.js";
+import UserMiddleware from "../middlewares/user.middleware.js";
 
 router.get("/", (req, res, next) => {
   try {
@@ -13,7 +14,7 @@ router.get("/", (req, res, next) => {
   }
 });
 
-router.post("/", (req, res, next) => {
+router.post("/", UserMiddleware, (req, res, next) => {
   try {
     let newUser = UserController.createUser(req.body);
     res.json(newUser);

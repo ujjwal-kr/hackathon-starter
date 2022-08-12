@@ -14,7 +14,7 @@ content-type: application/json
 {
     "name": "ujjwal",
     "age": 122,
-    "email": "test@tests.com"
+    "email": "ok"
 }
 
 ###
