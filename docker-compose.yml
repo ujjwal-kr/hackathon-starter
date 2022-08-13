@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  backend:
+    container_name: hackathon-server
+    # env_file:
+    #     "./server/server.env"
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile
+    ports:
+      - "4000:4000"
+    restart: unless-stopped # set to always for deployment  
+  frontend:
+    container_name: hackathon-frontend
+    build:
+      context: ./client
+      dockerfile: ./Dockerfile
+    ports:
+      - "5173:5173"
+    restart: unless-stopped # set to always for deployment    
