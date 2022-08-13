@@ -4,9 +4,9 @@ const router = express.Router();
 import UserController from "../controllers/user.controller.js";
 import UserMiddleware from "../middlewares/user.middleware.js";
 
-router.get("/", (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
-    let users = UserController.getUsers();
+    let users = await UserController.getUsers();
     res.json(users);
   } catch (e) {
     res.statusCode = 400;
@@ -14,9 +14,9 @@ router.get("/", (req, res, next) => {
   }
 });
 
-router.post("/", UserMiddleware, (req, res, next) => {
+router.post("/", UserMiddleware, async (req, res, next) => {
   try {
-    let newUser = UserController.createUser(req.body);
+    let newUser = await UserController.createUser(req.body);
     res.json(newUser);
   } catch (e) {
     res.statusCode = 400;
