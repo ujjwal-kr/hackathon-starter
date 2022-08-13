@@ -3,6 +3,8 @@ version: '3'
 services:
   backend:
     container_name: hackathon-server
+    depends_on:
+      - mongo
     # env_file:
     #     "./server/server.env"
     build:
@@ -18,4 +20,10 @@ services:
       dockerfile: ./Dockerfile
     ports:
       - "5173:5173"
-    restart: unless-stopped # set to always for deployment    
+    restart: unless-stopped # set to always for deployment
+  mongo:
+    image: mongo:latest
+    ports:
+      - "20717:20717"
+    volumes:
+      - /data/db # Create a volume for the DB.    
