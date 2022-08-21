@@ -36,8 +36,7 @@ In heavy development, use at your own risk.
 - run `git add . && git commit -m "initial commit"` to make your own initial commit
 - run `git remote add origin <your-repo-url>`
 - run `git push -u origin main` to push the code as main branch
-- `cd` into both the directories and run `npm i` to install dependencies
-- `npm run dev` into both the directories to run the dev server, check package.json for more commands
+- run `docker-compose up` to start the project
 
 ## Developers
  - [@ujjwal-kr](https://github.com/ujjwal-kr)

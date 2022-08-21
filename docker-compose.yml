@@ -4,18 +4,15 @@ services:
   backend:
     container_name: hackathon-server
     depends_on:
-      - mongo
-    # env_file:
-    #     "./server/server.env"
+      - mongodb
+    env_file:
+        "./server/.env"
     build:
       context: ./server
       dockerfile: ./Dockerfile
     ports:
       - "4000:4000"
-    volumes:
-      - .:/home/node/app
-      - node_modules:/home/node/app/node_modules      
-    restart: unless-stopped # set to always for deployment  
+    restart: unless-stopped # set to always for deployment
   frontend:
     container_name: hackathon-frontend
     build:
@@ -23,18 +20,15 @@ services:
       dockerfile: ./Dockerfile
     ports:
       - "5173:5173"
-    volumes:
-      - .:/home/node/app
-      - node_modules:/home/node/app/node_modules      
     restart: unless-stopped # set to always for deployment
-  mongo:
+  mongodb:
+    container_name: mongodb
     image: mongo:latest
     ports:
       - "20717:20717"
-    restart: unless-stopped  
+    restart: unless-stopped
     volumes:
-      - /data/db # Create a volume for the DB.
-      
+      - db:/data/db # Create a volume for the DB.
+
 volumes:
-  dbdata:
-  node_modules:        
+  db:

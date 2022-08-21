@@ -2,7 +2,7 @@ import app from "./app.js";
 import mongoose from 'mongoose';
 
 mongoose
-  .connect("mongodb://mongo:27017/DEV", {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -16,5 +16,5 @@ mongoose
 let port = process.env.PORT || 4000;
 
 app.listen(port, () => {
-  console.log(`Server listening on port ${port} 🚀!!`);
+  console.log(`Server listening on port ${port} 🚀`);
 });

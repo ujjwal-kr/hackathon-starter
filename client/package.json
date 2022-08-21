@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview --port 5173 --host"
   },
   "dependencies": {
     "@emotion/react": "^11.10.0",
