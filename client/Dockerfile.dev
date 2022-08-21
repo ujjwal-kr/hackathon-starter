@@ -1,0 +1,7 @@
+FROM node:16.14.2-alpine3.15
+
+WORKDIR /app
+
+EXPOSE 5173
+
+CMD ["npm", "run", "dev"]
