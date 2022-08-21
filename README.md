@@ -1,6 +1,6 @@
 # Hackathon Starter
 
-A full stack JavaScript template with authentication to quickly get started on a hackathon or some equivalent business you are up to.
+A full stack JavaScript template [MERN] with authentication to quickly get started on a hackathon or some equivalent business you are up to.
 
 > **Warning**:
 In heavy development, use at your own risk.
@@ -12,8 +12,6 @@ In heavy development, use at your own risk.
     - emotion and mantine for styles
     - Sign up and login feature built-in
     - axios for requests
-    - A CLI to generate components and services
-
 - Backend
     - Node and Express app
     - jwt for authorization
@@ -24,10 +22,7 @@ In heavy development, use at your own risk.
     - .env to manage environment vars
     - helmet for security headers
     - Joi for validation
-    - A CLI to generate routes and controllers
-
-- DB: todo
-
+    
 ## How to use
 
 - clone the repo using `git clone https://github.com/ujjwal-kr/hackathon-starter`.
