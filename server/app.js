@@ -24,7 +24,7 @@ dotenv.config();
 // routes
 
 app.get("/", (req, res) => {
-  res.send("Hello from express");
+  res.send("Hello from express`");
 });
 
 app.use("/users", users);

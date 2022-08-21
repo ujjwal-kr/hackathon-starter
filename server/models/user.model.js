@@ -1,3 +1,9 @@
-const Users = [];
+import mongoose from 'mongoose';
 
-export default Users;
+const userSchema = new mongoose.Schema({
+    name: {type: String, required: true},
+    email: {type: String, required: true},
+    age: {type: Number, required: true},
+}, {collection: 'users'})
+
+export default mongoose.model("User", userSchema);

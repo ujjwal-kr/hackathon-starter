@@ -13,8 +13,8 @@ content-type: application/json
 
 {
     "name": "ujjwal",
-    "age": 122,
-    "email": "ok"
+    "age": 17,
+    "email": "ok@ok.com"
 }
 
 ###

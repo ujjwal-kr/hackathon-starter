@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  backend:
+    container_name: hackathon-server
+    depends_on:
+      - mongodb
+    env_file:
+        "./server/.env"
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile.dev
+    ports:
+      - "4000:4000"
+    restart: unless-stopped # set to always for deployment
+    volumes:
+      - ./server:/app
+  frontend:
+    container_name: hackathon-frontend
+    build:
+      context: ./client
+      dockerfile: ./Dockerfile.dev
+    ports:
+      - "5173:5173"
+    restart: unless-stopped # set to always for deployment
+    volumes:
+      - ./client:/app
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
+    ports:
+      - "20717:20717"
+    restart: unless-stopped
+    volumes:
+      - db:/data/db # Create a volume for the DB.
+
+volumes:
+  db:
+
+
+# /usr/src/api
+# ./../api:/usr/src/api

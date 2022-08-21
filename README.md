@@ -1,6 +1,6 @@
 # Hackathon Starter
 
-A full stack JavaScript template with authentication to quickly get started on a hackathon or some equivalent business you are up to.
+A full stack JavaScript template [MERN] with authentication to quickly get started on a hackathon or some equivalent business you are up to.
 
 > **Warning**:
 In heavy development, use at your own risk.
@@ -12,8 +12,6 @@ In heavy development, use at your own risk.
     - emotion and mantine for styles
     - Sign up and login feature built-in
     - axios for requests
-    - A CLI to generate components and services
-
 - Backend
     - Node and Express app
     - jwt for authorization
@@ -24,20 +22,28 @@ In heavy development, use at your own risk.
     - .env to manage environment vars
     - helmet for security headers
     - Joi for validation
-    - A CLI to generate routes and controllers
-
-- DB: todo
-
+    
 ## How to use
 
-- clone the repo using `git clone https://github.com/ujjwal-kr/hackathon-starter`
-- delete the `.git` folder using `rm -rf .git` to remove my commits
-- run `git init` to initialise your own repo
-- run `git add . && git commit -m "initial commit"` to make your own initial commit
-- run `git remote add origin <your-repo-url>`
-- run `git push -u origin main` to push the code as main branch
-- `cd` into both the directories and run `npm i` to install dependencies
-- `npm run dev` into both the directories to run the dev server, check package.json for more commands
+- clone the repo using `git clone https://github.com/ujjwal-kr/hackathon-starter`.
+- delete the `.git` folder using `rm -rf .git` to remove my commits.
+- run `git init` to initialise your own repo.
+- run `git add . && git commit -m "initial commit"` to make your own initial commit.
+- run `git remote add origin <your-repo-url>`.
+- run `git push -u origin main` to push the code as main branch.
+- make a .env file in the /server folder and copy the contents of `example.env` file.
+- you can change the container names in the docker compose files if you want to. 
 
+### Development Mode
+ - cd into the /client and /server folder and run `npm install` in each to install the dependencies.
+ - run `docker-compose -f docker-compose.dev.yml build` to build the containers.
+ - run `docker-compose -f docker-compose.dev.yml up` to start the containers in watch mode.
+ - you can run `docker-compose stop` to stop the containers.
+
+### Production Mode
+- run `docker-compose build` to build the containers in production mode. [Run this each time when files are changed].
+- run `docker-compose up` to start the containers. See ports in docker-compose.yml file.
+ - you can run `docker-compose stop` to stop the containers.
+ 
 ## Developers
  - [@ujjwal-kr](https://github.com/ujjwal-kr)
