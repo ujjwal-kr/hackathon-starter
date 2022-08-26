@@ -25,8 +25,15 @@ router.post("/", UserMiddleware, async (req, res, next) => {
   }
 });
 
-router.post("/login", (req, res, next) => {
-
+router.post("/login", async (req, res, next) => {
+  try {
+    await UserController.login(req.body, (userWithToken) => {
+      return res.json(userWithToken)
+    });
+  } catch (e) {
+    res.statusCode = 400;
+    next(e)
+  }
 })
 
 export default router;

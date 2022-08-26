@@ -1,5 +1,6 @@
 import User from "../models/user.model.js";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 const UserController = {
   getUsers: async () => {
@@ -25,6 +26,22 @@ const UserController = {
       })
     })
   },
+
+  login: async (body, callback) => {
+    let { email, password } = body;
+    const user = await User.findOne({email})
+
+    if (!user) throw Error("User does not exist")
+    bcrypt.compare(password, user.password, async (err, correct) => {
+      if (err) throw Error("Wrong Password")
+
+      const payload = { id: user.id }
+      jwt.sign(payload, process.env.JWT_SECRET, {expiresIn: '30d'}, (err, token) => {
+        if (err) throw err
+        callback({user, token})
+      })
+    })
+  }
 };
 
 export default UserController;
