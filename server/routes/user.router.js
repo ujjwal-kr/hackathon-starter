@@ -16,22 +16,17 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", UserMiddleware, async (req, res, next) => {
   try {
-    let newUser = await UserController.createUser(req.body);
-    res.json(newUser);
+    await UserController.createUser(req.body, (user) => {
+      return res.json(user)
+    });
   } catch (e) {
     res.statusCode = 400;
     next(e);
   }
 });
 
-router.get("/:mail", (req, res, next) => {
-  try {
-    let user = UserController.getUserByMail(req.params.mail);
-    res.json(user);
-  } catch (e) {
-    res.statusCode = 400;
-    next(e);
-  }
-});
+router.post("/login", (req, res, next) => {
+
+})
 
 export default router;
