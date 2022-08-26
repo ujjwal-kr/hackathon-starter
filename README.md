@@ -33,8 +33,8 @@ In heavy development, use at your own risk.
 
 - You can use this template by pressing the "Use this template" button left to the About section of the repo.
 - You can name the project whatever you want and then clone it in your local machine.
-- If you dont want to do the above, you can follow the rest of the steps:
 
+If you dont want to do the above, you can follow the rest of the steps:
 
 - clone the repo using `git clone https://github.com/ujjwal-kr/hackathon-starter`.
 - delete the `.git` folder using `rm -rf .git` to remove my commits.
