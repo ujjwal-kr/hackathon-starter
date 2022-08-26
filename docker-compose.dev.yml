@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  backend:
+  hackathon-server:
     container_name: hackathon-server
     depends_on:
       - mongodb
@@ -15,7 +15,7 @@ services:
     restart: unless-stopped # set to always for deployment
     volumes:
       - ./server:/app
-  frontend:
+  hackathon-frontend:
     container_name: hackathon-frontend
     build:
       context: ./client
