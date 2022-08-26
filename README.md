@@ -22,6 +22,12 @@ In heavy development, use at your own risk.
     - .env to manage environment vars
     - helmet for security headers
     - Joi for validation
+
+## Requirements
+ - docker
+ - docker-compose
+ - node v16.4+
+ - make [for windows users [cygwin terminal](https://www.cygwin.com/) is recommended]    
     
 ## Quickstart
 
