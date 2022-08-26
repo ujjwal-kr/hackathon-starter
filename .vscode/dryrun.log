@@ -1,0 +1,7 @@
+make: Entering directory '/home/ujjwal/projects/hackathon-starter'
+echo "Setting up env var.."
+echo "Run 'make dev' to run as development mode and 'make prod' for production mode"
+echo "Open Makefile or readme.md for more details"
+cp ./server/.env.example ./server/.env
+make: Leaving directory '/home/ujjwal/projects/hackathon-starter'
+ 

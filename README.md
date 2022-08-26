@@ -23,7 +23,12 @@ In heavy development, use at your own risk.
     - helmet for security headers
     - Joi for validation
     
-## How to use
+## Quickstart
+
+- You can use this template by pressing the "Use this template" button left to the About section of the repo.
+- You can name the project whatever you want and then clone it in your local machine.
+- If you dont want to do the above, you can follow the rest of the steps:
+
 
 - clone the repo using `git clone https://github.com/ujjwal-kr/hackathon-starter`.
 - delete the `.git` folder using `rm -rf .git` to remove my commits.
@@ -31,19 +36,13 @@ In heavy development, use at your own risk.
 - run `git add . && git commit -m "initial commit"` to make your own initial commit.
 - run `git remote add origin <your-repo-url>`.
 - run `git push -u origin main` to push the code as main branch.
-- make a .env file in the /server folder and copy the contents of `example.env` file.
 - you can change the container names in the docker compose files if you want to. 
 
-### Development Mode
- - cd into the /client and /server folder and run `npm install` in each to install the dependencies.
- - run `docker-compose -f docker-compose.dev.yml build` to build the containers.
- - run `docker-compose -f docker-compose.dev.yml up` to start the containers in watch mode.
- - you can run `docker-compose stop` to stop the containers.
-
-### Production Mode
-- run `docker-compose build` to build the containers in production mode. [Run this each time when files are changed].
-- run `docker-compose up` to start the containers. See ports in docker-compose.yml file.
- - you can run `docker-compose stop` to stop the containers.
+## How to Build
+ - For dev mode, run `make` and `make dev` to launch all the containers in watch mode.
+ - You can see the logs for a selected the container using `make logs C="<frontend> <backend>"`, For all logs, use `make logs`.
+ - You can stop them using `make down` and clean them using `make down_clean`.
+ - To start in production mode, use `make prod`.
  
 ## Developers
  - [@ujjwal-kr](https://github.com/ujjwal-kr)
