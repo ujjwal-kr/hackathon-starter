@@ -8,10 +8,10 @@ const userValidator = Joi.object({
 
 async function UserValidatorMiddleware(req, res, next) {
   try {
-    await userValidator.validateAsync(req.body)
+    await userValidator.validateAsync(req.body);
   } catch (e) {
-    res.statusCode = 400
-    next(Error(e.details[0].message))
+    res.statusCode = 400;
+    next(Error(e.details[0].message));
   }
 }
 

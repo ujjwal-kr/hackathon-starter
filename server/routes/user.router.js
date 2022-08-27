@@ -18,7 +18,7 @@ router.get("/", async (req, res, next) => {
 router.post("/", UserValidatorMiddleware, async (req, res, next) => {
   try {
     await UserController.createUser(req.body, (user) => {
-      return res.json(user)
+      return res.json(user);
     });
   } catch (e) {
     res.statusCode = 400;
@@ -29,12 +29,12 @@ router.post("/", UserValidatorMiddleware, async (req, res, next) => {
 router.post("/login", UserValidatorMiddleware, async (req, res, next) => {
   try {
     await UserController.login(req.body, (userWithToken) => {
-      return res.json(userWithToken)
+      return res.json(userWithToken);
     });
   } catch (e) {
     res.statusCode = 400;
-    next(e)
+    next(e);
   }
-})
+});
 
 export default router;
