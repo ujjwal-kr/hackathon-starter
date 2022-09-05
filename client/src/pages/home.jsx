@@ -1,3 +1,3 @@
 export default function Home() {
-    return <div>KEKW</div>
+    return <div>HOME</div>
 }
