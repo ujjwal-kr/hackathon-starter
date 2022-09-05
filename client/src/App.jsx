@@ -1,6 +1,6 @@
 import Home from "./pages/home"
 import Login from "./pages/login"
-import SignUp from "./pages/signup"
+import Register from "./pages/register"
 
 import {
   BrowserRouter,
@@ -15,9 +15,9 @@ function App() {
     <BrowserRouter>
       <Routes>
 
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} exact />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/register" element={<Register />} />
 
       </Routes>
     </BrowserRouter>
