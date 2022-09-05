@@ -1,7 +1,21 @@
 import { createStyles, Text, Title, Button, Image } from '@mantine/core';
+import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 
 export default function Home() {
+
+    let [user, setUser] = useState(null)
+
+    useEffect(() => {
+        const userStr = window.localStorage.getItem("user")
+        const token = window.localStorage.getItem("token")
+
+        if (userStr && token) {
+            setUser(JSON.parse(userStr))
+            console.log(user)
+        }
+    }, [])
+
     const { classes } = useStyles();
     return (
         <div className={classes.wrapper}>
@@ -14,24 +28,39 @@ export default function Home() {
                     <code>A full stack JavaScript template [MERN] to quickly get started on a hackathon or some equivalent business you are up to. With features like signin and user registration built in. Read the readme for the list of packages included.</code>
                 </Text>
                 <br />
+                {user ? 
                 <div>
-                    <Link to="/register">
-                        <Button size='md' variant="gradient"
-                            gradient={{ from: 'red', to: 'yellow', deg: 60 }}
-                            className={classes.buttons}>
-                            Register
-                        </Button>
-                    </Link>
-
-                    <strong>/</strong>
-                    <Link to="/login">
-                        <Button size='md' variant="gradient"
-                            gradient={{ from: 'red', to: 'yellow', deg: 60 }}
-                            className={classes.buttons}>
-                            Login
-                        </Button>
-                    </Link>
+                    <p className={classes.title}>Logged in As {user.name}</p>
+                    <Button onClick={() => {
+                        window.localStorage.removeItem("user")
+                        window.localStorage.removeItem("token")
+                        setUser(null)
+                    }} size='md' variant="gradient"
+                         gradient={{ from: 'red', to: 'yellow', deg: 60 }}>
+                         Log Out
+                     </Button>
                 </div>
+                 : 
+                 <div>
+                 <Link to="/register">
+                     <Button size='md' variant="gradient"
+                         gradient={{ from: 'red', to: 'yellow', deg: 60 }}
+                         className={classes.buttons}>
+                         Register
+                     </Button>
+                 </Link>
+
+                 <strong>/</strong>
+                 <Link to="/login">
+                     <Button size='md' variant="gradient"
+                         gradient={{ from: 'red', to: 'yellow', deg: 60 }}
+                         className={classes.buttons}>
+                         Login
+                     </Button>
+                 </Link>
+             </div>
+                
+                }
             </div>
 
             <Image src="https://cdn.discordapp.com/attachments/876794298782347284/1016228928991543316/unknown.png" className={classes.image} />
