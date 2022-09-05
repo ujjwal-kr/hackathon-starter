@@ -26,7 +26,9 @@ In heavy development, use at your own risk.
  - docker
  - docker-compose
  - node v16.4+
- - make [for windows users [cygwin terminal](https://www.cygwin.com/) is recommended]    
+ - make [for windows users [cygwin terminal](https://www.cygwin.com/) is recommended]
+
+ [!ss](https://cdn.discordapp.com/attachments/875733830542196768/1016303160429645834/unknown.png)
     
 ## Quickstart
 
