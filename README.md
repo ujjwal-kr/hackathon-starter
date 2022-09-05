@@ -46,7 +46,7 @@ If you dont want to do the above, you can follow the rest of the steps:
 
 ## How to Build
  - For dev mode, run `make` and `make dev` to launch all the containers in watch mode.
- - You can see the logs for a selected the container using `make logs C="<hackathon-frontend> <hackathon-backend>"`, For all logs, use `make logs`.
+ - You can see the logs for a selected the container using `make logs c="<hackathon-frontend> <hackathon-backend>"`, For all logs, use `make logs`.
  - You can stop them using `make down` and clean them using `make down_clean`.
  - To start in production mode, use `make prod`.
  
