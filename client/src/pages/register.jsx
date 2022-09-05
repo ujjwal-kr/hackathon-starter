@@ -11,10 +11,9 @@ import {
     Button,
     Anchor,
     Stack,
-    Center,
 } from '@mantine/core';
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(() => ({
     wrapper: {
         display: 'flex',
         justifyContent: 'center',
@@ -47,13 +46,13 @@ export default function Register() {
     });
 
     function login() {
-        navigate.push('/login')
+       navigate('/login')
     }
 
     const { classes } = useStyles();
 
     return (
-            <div className={classes.wrapper}>
+        <div className={classes.wrapper}>
             <Paper className={classes.paper} radius="md" p="xl" withBorder>
                 <Text size="lg" weight={500}>
                     Register
@@ -99,6 +98,6 @@ export default function Register() {
                     </Group>
                 </form>
             </Paper>
-            </div>
+        </div>
     );
 }
