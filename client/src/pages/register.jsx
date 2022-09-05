@@ -46,7 +46,7 @@ export default function Register() {
     });
 
     function login() {
-       navigate('/login')
+        navigate('/login')
     }
 
     const { classes } = useStyles();
@@ -94,7 +94,10 @@ export default function Register() {
                         >
                             Aready have an account? Login
                         </Anchor>
-                        <Button type="submit">Register</Button>
+                        <Button
+                            variant="gradient"
+                            gradient={{ from: 'red', to: 'yellow', deg: 60 }}
+                            type="submit">Register</Button>
                     </Group>
                 </form>
             </Paper>
