@@ -28,7 +28,7 @@ In heavy development, use at your own risk.
  - node v16.4+
  - make [for windows users [cygwin terminal](https://www.cygwin.com/) is recommended]
 
- ![ss](https://cdn.discordapp.com/attachments/875733830542196768/1016303160429645834/unknown.png)
+ ![ss](https://cdn.discordapp.com/attachments/875733830542196768/1016304392212848771/unknown.png)
     
 ## Quickstart
 
