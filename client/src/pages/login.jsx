@@ -1,5 +1,6 @@
 import { useForm } from '@mantine/form';
 import { useNavigate } from "react-router-dom";
+import AuthService from "../services/auth.service";
 
 import {
     createStyles,
@@ -57,7 +58,19 @@ export default function Login() {
                     LogIn
                 </Text>
 
-                <form onSubmit={form.onSubmit((data) => { console.log(data) })}>
+                <form onSubmit={form.onSubmit(async (data) => { 
+                    await AuthService.login(data).then((res) => {
+                        let user = JSON.stringify(res.user)
+                        window.localStorage.setItem("user", user)
+
+                        let token = res.token
+                        window.localStorage.setItem("token", token)
+                        navigate('/')
+                    }).catch(e => {
+                        console.log(e)
+                        alert("Wrong Password?")
+                    })
+                 })}>
                     <Stack>
                         <TextInput
                             required

@@ -1,17 +1,22 @@
 import axios from "axios"
 
 const AuthService = {
-    login: () => {
-        console.log("Login")
+    login: async (data) => {
+        try {
+            const res = await axios.post("http://localhost:4000/users/login", data)
+            return res.data
+        } catch (e) {
+            console.log(e)
+        }
     },
 
-    register: () => {
-        axios.get("http://localhost:4000")
-        .then(data => {
-            console.log(data.data)
-        }).catch(e => {
+    register: async (data) => {
+        try {
+           console.log(data)
+           await axios.post("http://localhost:4000/users", data)
+        } catch (e) {
             console.log(e)
-        }) 
+        } 
     }
 }
 

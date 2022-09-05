@@ -21,7 +21,6 @@ In heavy development, use at your own risk.
     - nodemon for dev server
     - .env to manage environment vars
     - helmet for security headers
-    - Joi for validation
 
 ## Requirements
  - docker

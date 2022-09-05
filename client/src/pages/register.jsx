@@ -1,5 +1,6 @@
 import { useForm } from '@mantine/form';
 import { useNavigate } from "react-router-dom";
+import AuthService from "../services/auth.service";
 
 import {
     createStyles,
@@ -58,7 +59,13 @@ export default function Register() {
                     Register
                 </Text>
 
-                <form onSubmit={form.onSubmit((data) => { console.log(data) })}>
+                <form onSubmit={form.onSubmit(async (data) => {
+                    await AuthService.register(data).then(() => {
+                        navigate("/login")
+                    }).catch(e => {
+                        alert("Something went wrong, check logs")
+                    })
+                 })}>
                     <Stack>
                         <TextInput
                             required
