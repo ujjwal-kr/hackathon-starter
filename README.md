@@ -1,5 +1,7 @@
 # Hackathon Starter
 
+ ![ss](https://cdn.discordapp.com/attachments/875733830542196768/1016304392212848771/unknown.png)
+
 A full stack JavaScript template [MERN] with authentication to quickly get started on a hackathon or some equivalent business you are up to.
 
 ## Components
@@ -24,8 +26,6 @@ A full stack JavaScript template [MERN] with authentication to quickly get start
  - docker-compose
  - node v16.4+
  - make [for windows users [cygwin terminal](https://www.cygwin.com/) is recommended]
-
- ![ss](https://cdn.discordapp.com/attachments/875733830542196768/1016304392212848771/unknown.png)
     
 ## Quickstart
 
