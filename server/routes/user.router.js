@@ -2,8 +2,6 @@ import express from "express";
 const router = express.Router();
 
 import UserController from "../controllers/user.controller.js";
-import UserMiddleware from "../middlewares/user.middleware.js";
-import UserValidatorMiddleware from "../middlewares/validators/user.validator.js";
 
 router.get("/", async (req, res, next) => {
   try {
@@ -15,7 +13,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.post("/", UserValidatorMiddleware, async (req, res, next) => {
+router.post("/", async (req, res, next) => {
   try {
     await UserController.createUser(req.body, (user) => {
       return res.json(user);
@@ -26,9 +24,10 @@ router.post("/", UserValidatorMiddleware, async (req, res, next) => {
   }
 });
 
-router.post("/login", UserValidatorMiddleware, async (req, res, next) => {
+router.post("/login", async (req, res, next) => {
   try {
-    await UserController.login(req.body, (userWithToken) => {
+   const { email, password } = req.body
+    await UserController.login({email, password}, (userWithToken) => {
       return res.json(userWithToken);
     });
   } catch (e) {

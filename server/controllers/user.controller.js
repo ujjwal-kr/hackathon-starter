@@ -33,21 +33,20 @@ const UserController = {
 
     if (!user) throw Error("User does not exist");
     bcrypt.compare(password, user.password, async (err, correct) => {
-      if (err) throw Error("Wrong Password");
-
-      const payload = { id: user.id };
-      
-      jwt.sign(
-        payload,
-        process.env.JWT_SECRET,
-        { expiresIn: "30d" },
-        (err, token) => {
-          if (err) throw err;
-          callback({ user, token });
-        }
-      );
+      if (correct) {
+        const payload = { id: user.id };
+        jwt.sign(
+          payload,
+          process.env.JWT_SECRET,
+          { expiresIn: "30d" },
+          (err, token) => {
+            if (err) throw err;
+            callback({ user, token });
+          });
+      } else {
+        throw Error("Wrong password")
+      }
     });
-    
   },
 
 
