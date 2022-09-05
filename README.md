@@ -2,9 +2,6 @@
 
 A full stack JavaScript template [MERN] with authentication to quickly get started on a hackathon or some equivalent business you are up to.
 
-> **Warning**:
-In heavy development, use at your own risk.
-
 ## Components
 
 - Client
