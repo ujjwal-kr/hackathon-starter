@@ -1,10 +1,104 @@
-import { useEffect } from "react"
-import AuthService from "../services/auth.service"
+import { useForm } from '@mantine/form';
+import { useNavigate } from "react-router-dom";
+
+import {
+    createStyles,
+    TextInput,
+    PasswordInput,
+    Text,
+    Paper,
+    Group,
+    Button,
+    Anchor,
+    Stack,
+    Center,
+} from '@mantine/core';
+
+const useStyles = createStyles((theme) => ({
+    wrapper: {
+        display: 'flex',
+        justifyContent: 'center',
+    },
+
+    paper: {
+        width: '60%',
+        marginTop: '10%',
+
+        [`@media (max-width: 600px)`]: {
+            width: '90%'
+        },
+    }
+
+}))
 
 export default function Register() {
-    useEffect(() => {
-        AuthService.register()
-    }, [])
+    const navigate = useNavigate()
+    const form = useForm({
+        initialValues: {
+            email: '',
+            name: '',
+            password: '',
+        },
 
-    return <div>SignUp</div>
+        validate: {
+            email: (val) => (/^\S+@\S+$/.test(val) ? null : 'Invalid email'),
+            password: (val) => (val.length <= 6 ? 'Password should include at least 6 characters' : null),
+        },
+    });
+
+    function login() {
+        navigate.push('/login')
+    }
+
+    const { classes } = useStyles();
+
+    return (
+            <div className={classes.wrapper}>
+            <Paper className={classes.paper} radius="md" p="xl" withBorder>
+                <Text size="lg" weight={500}>
+                    Register
+                </Text>
+
+                <form onSubmit={form.onSubmit((data) => { console.log(data) })}>
+                    <Stack>
+                        <TextInput
+                            required
+                            label="Name"
+                            value={form.values.name}
+                            onChange={(event) => form.setFieldValue('name', event.currentTarget.value)}
+                        />
+
+                        <TextInput
+                            required
+                            label="Email"
+                            value={form.values.email}
+                            onChange={(event) => form.setFieldValue('email', event.currentTarget.value)}
+                            error={form.errors.email && 'Invalid email'}
+                        />
+
+                        <PasswordInput
+                            required
+                            label="Password"
+                            value={form.values.password}
+                            onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}
+                            error={form.errors.password && 'Password should include at least 6 characters'}
+                        />
+                    </Stack>
+
+                    <Group position="apart" mt="xl">
+                        <Anchor
+                            component="button"
+                            type="button"
+                            color="dimmed"
+                            onClick={() => login()}
+                            size="xs"
+                        >
+                            Aready have an account? Login
+                        </Anchor>
+                        <Button type="submit">Register</Button>
+                    </Group>
+                </form>
+            </Paper>
+            </div>
+    );
 }
