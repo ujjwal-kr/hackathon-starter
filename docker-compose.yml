@@ -25,7 +25,7 @@ services:
     container_name: mongodb
     image: mongo:latest
     ports:
-      - "20717:20717"
+      - "27017:27017"
     restart: unless-stopped
     volumes:
       - db:/data/db # Create a volume for the DB.
