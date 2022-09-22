@@ -1,6 +1,6 @@
 # Hackathon Starter
 
- ![ss](https://cdn.discordapp.com/attachments/875733830542196768/1016304392212848771/unknown.png)
+ ![ss](https://cdn.discordapp.com/attachments/936106022576201769/1022422365625401385/unknown.png)
 
 A full stack JavaScript template [MERN] with authentication to quickly get started on a hackathon or some equivalent business you are up to.
 
